@@ -1,0 +1,84 @@
+.navbar {
+    /* Mantiene la navbar fija en la parte superior al hacer scroll y empuja hacia abajo lo que hay en body, haciendo que no se overlapeen*/
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    min-height: 60px; /* Cambiado de height a min-height */
+    background-color: #F2F2F2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    flex-wrap: wrap; /* Permite que los elementos se acomoden en una nueva fila si es necesario */
+}
+
+.left {
+    flex:1;
+}
+
+.left a{
+    display: flex;
+    align-items: center;
+    gap:10px;
+}
+.navbar-logo{
+    padding: 2px;
+    width: 140px;
+    height: 50px;
+    border-radius: 10px;
+}
+/* Estilo de los componentes Link de react-router-dom, se renderizan como a*/
+.navbar a {
+    /*elimina el subrayado de las etiquetas a*/
+    text-decoration: none;
+    /*hereda el color del elemento padre, en este caso del body*/
+    color: inherit;
+}
+
+.right {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    flex:1;
+    gap: 10px; /* Espacio entre los elementos */
+}
+
+.right-buttons{
+    color: black;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500; 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.barra-busqueda {
+    height: 35px; 
+    padding: 3px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px;
+    font-size: 14px; 
+  }
+  
+  .navbar-cart {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .cart-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 14px;
+    font-weight: bold;
+  }  
