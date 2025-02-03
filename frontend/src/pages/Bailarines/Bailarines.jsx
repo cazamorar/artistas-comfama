@@ -1,7 +1,7 @@
 import React, { useState, useContext  } from 'react';
 import { InstagramLogo,  SpotifyLogo, YoutubeLogo, Equalizer } from "phosphor-react";
-import ProfileCard from '../../components/ProfileCard/ProfileCard';
 import CardsContainer from '../../components/CardsContainer/CardsContainer';
+import FilterBar from '../../components/FilterBar/FilterBar';
 
 
 // Datos de ejemplo para los músicos
@@ -199,24 +199,7 @@ export const Bailarines = () => {
       <h1 className="musicos-title">MÚSICOS</h1>
 
       {/* Filtros por género */}
-      <div className="genre-filters">
-        {genreFilters.map((genre, index) => (
-          <button
-            key={index}
-            className={`filter-button ${selectedGenre === genre ? 'active' : ''}`}
-            onClick={() => setSelectedGenre(genre)}
-          >
-            {genre}
-          </button>
-        ))}
-        {/* Botón para mostrar TODOS los músicos */}
-        <button
-          className={`filter-button ${selectedGenre === '' ? 'active' : ''}`}
-          onClick={() => setSelectedGenre('')}
-        >
-          TODOS
-        </button>
-      </div>
+      <FilterBar filters={genreFilters} setFilterFunction={setSelectedGenre} selectedFilter = {selectedGenre}/>
 
       {/* Cards de músicos */}
       <CardsContainer cards={filteredProfiles} setModalFunction={setModal} />

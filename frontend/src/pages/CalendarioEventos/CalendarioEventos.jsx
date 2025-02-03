@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import FilterBar from '../../components/FilterBar/FilterBar';
 
 // Datos de ejemplo para eventos
 const eventsData = [
@@ -10,7 +10,7 @@ const eventsData = [
     date: { day: '22', month: 'ENE', year: '2025' },
     location: 'Teatro Metropolitano',
     time: '20:00',
-    filterType: 'week'
+    filterType: 'ESTA SEMANA'
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const eventsData = [
     date: { day: '24', month: 'ENE', year: '2025' },
     location: 'Teatro Universidad de Medellín',
     time: '20:00',
-    filterType: 'week'
+    filterType: 'ESTA SEMANA'
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ const eventsData = [
     date: { day: '31', month: 'ENE', year: '2025' },
     location: 'Teatro Metropolitano',
     time: '20:00',
-    filterType: 'month'
+    filterType: 'ESTE MES'
   },
   {
     id: 4,
@@ -37,9 +37,11 @@ const eventsData = [
     date: { day: '05', month: 'DEC', year: '2025' },
     location: 'Teatro Metropolitano',
     time: '20:00',
-    filterType: 'year'
+    filterType: 'ESTE AÑO'
   }
 ];
+
+const calendarFilters = ['ESTA SEMANA', 'ESTE MES', 'ESTE AÑO'];
 
 export const CalendarioEventos = () => {
   const [selectedFilter, setSelectedFilter] = useState('');
@@ -59,32 +61,7 @@ export const CalendarioEventos = () => {
       <h1 className="calendario-title">CALENDARIO DE EVENTOS</h1>
 
       {/* Filtros */}
-      <div className="calendario-filters">
-        <button
-          className={`filter-btn ${selectedFilter === 'week' ? 'active' : ''}`}
-          onClick={() => handleFilter('week')}
-        >
-          ESTA SEMANA
-        </button>
-        <button
-          className={`filter-btn ${selectedFilter === 'month' ? 'active' : ''}`}
-          onClick={() => handleFilter('month')}
-        >
-          ESTE MES
-        </button>
-        <button
-          className={`filter-btn ${selectedFilter === 'year' ? 'active' : ''}`}
-          onClick={() => handleFilter('year')}
-        >
-          ESTE AÑO
-        </button>
-        <button
-          className={`filter-btn ${selectedFilter === '' ? 'active' : ''}`}
-          onClick={() => handleFilter('')}
-        >
-          TODOS
-        </button>
-      </div>
+      <FilterBar filters={calendarFilters} setFilterFunction={handleFilter} selectedFilter = {selectedFilter}/>
 
       {/* Cards de eventos */}
       <div className="events-cards">
