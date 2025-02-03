@@ -1,6 +1,7 @@
 import React, { useState, useContext  } from 'react';
-import '../../styles/pages/FotografiaPintura.css';
 import { InstagramLogo,  SpotifyLogo, YoutubeLogo, Equalizer } from "phosphor-react";
+import ProfileCard from '../../components/ProfileCard/ProfileCard';
+import CardsContainer from '../../components/CardsContainer/CardsContainer';
 
 
 // Datos de ejemplo para los músicos
@@ -176,12 +177,12 @@ export const FotografiaPintura = () => {
 
 
   // Estado para el modal (músico seleccionado)
-  const [modalMusician, setModalMusician] = useState(null);
+  const [modal, setModal] = useState(null);
 
 
 
   // Filtra los músicos según el género seleccionado
-  const filteredMusicians = selectedGenre
+  const filteredProfiles = selectedGenre
     ? musicians.filter(musician => musician.genre === selectedGenre)
     : musicians;
 
@@ -211,31 +212,11 @@ export const FotografiaPintura = () => {
       </div>
 
       {/* Cards de músicos */}
-      <div className="musicians-cards">
-        {filteredMusicians.map(musician => (
-          <div key={musician.id} className="musician-card">
-            <img
-              src={musician.photo}
-              alt={musician.name}
-              className="musician-photo"
-            />
-            <h2 className="musician-name">{musician.name}</h2>
-            <p className="musician-genre">{musician.genre}</p>
-            <p className="musician-description">{musician.description}</p>
-
-            <button className="profile-button" onClick={() => setModalMusician(musician)} >
-                Ver perfil
-            </button>
-          </div>
-        ))}
-
-
-
-      </div>
+      <CardsContainer cards={filteredProfiles} setModalFunction={setModal} />
 
       {/* Modal para ver el perfil */}
-      {modalMusician && (
-        <ModalProfile musician={modalMusician} onClose={() => setModalMusician(null)} />
+      {modal && (
+        <ModalProfile musician={modal} onClose={() => setModal(null)} />
       )}
       
     </div>

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import '../../styles/pages/Home.css';
 import { FacebookLogo, InstagramLogo, TwitterLogo, SpotifyLogo, YoutubeLogo, LinkedinLogo, Equalizer } from "phosphor-react";
 
 
