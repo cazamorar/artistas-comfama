@@ -1,8 +1,8 @@
 import React, { useState, useContext  } from 'react';
-import { InstagramLogo,  SpotifyLogo, YoutubeLogo, Equalizer } from "phosphor-react";
 import CardsContainer from '../../components/CardsContainer/CardsContainer';
 import FilterBar from '../../components/FilterBar/FilterBar';
 import style from './Bailarines.module.css'
+import { Modal } from '../../components/Modal/Modal';
 
 // Datos de ejemplo para los músicos
 const musicians = [
@@ -67,118 +67,6 @@ const musicians = [
 // Opciones de filtro según el mockup
 const genreFilters = ['SALSA', 'CONTEMPORÁNEO', 'HIP-HOP', 'DANCEHALL', 'HOUSE', 'FOLKLORE', 'BALLET', 'MÁS'];
 
-
-
-
-
-
-
-
-
-
-
-
-
-const ModalProfile = ({ musician, onClose }) => {
-  if (!musician) return null;
-
-  return (
-    <div className="modal-overlay" onClick={onClose}>
-      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <button className="modal-close" onClick={onClose}>X</button>
-        {/* Encabezado con el nombre del músico */}
-        <div className="modal-header">
-          <h2 className="modal-musician-name">{musician.name}</h2>
-        </div>
-
-        {/* Sección de descripción e imagen */}
-        <div className="modal-body">
-          <div className="modal-info">
-            <div className="modal-description">
-              <p>{musician.description}</p>
-            </div>
-            <div className="modal-image">
-              <img src={musician.photo} alt={musician.name} />
-            </div>
-          </div>
-
-          {/* Redes sociales */}
-          <div className="modal-social">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-              <InstagramLogo size={32} />
-            </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-              <SpotifyLogo size={32} />
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-              <YoutubeLogo size={32} />
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-              <Equalizer size={32} />
-            </a>
-            
-          </div>
-
-          {/* Portafolio de videos */}
-          <div className="modal-portfolio">
-            <h3 className="portfolio-title">Portafolio</h3>
-            <div className="portfolio-videos">
-              <div className="video-main">
-                <iframe
-                  width="408"
-                  height="306"
-                  src="https://www.youtube.com/embed/VIDEO_ID_MAIN"
-                  frameBorder="0"
-                  allowFullScreen
-                  title="Main Video"
-                ></iframe>
-              </div>
-              <div className="video-secondary">
-                <iframe
-                  width="256"
-                  height="140"
-                  src="https://www.youtube.com/embed/VIDEO_ID_1"
-                  frameBorder="0"
-                  allowFullScreen
-                  title="Video 1"
-                ></iframe>
-                <iframe
-                  width="256"
-                  height="140"
-                  src="https://www.youtube.com/embed/VIDEO_ID_2"
-                  frameBorder="0"
-                  allowFullScreen
-                  title="Video 2"
-                ></iframe>
-                <iframe
-                  width="256"
-                  height="140"
-                  src="https://www.youtube.com/embed/VIDEO_ID_3"
-                  frameBorder="0"
-                  allowFullScreen
-                  title="Video 3"
-                ></iframe>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
 export const Bailarines = () => {
 
   // Estado para almacenar el género seleccionado. Si está vacío se muestran todos.
@@ -206,7 +94,7 @@ export const Bailarines = () => {
 
       {/* Modal para ver el perfil */}
       {modal && (
-        <ModalProfile musician={modal} onClose={() => setModal(null)} />
+        <Modal profile={modal} OnCloseFuntion={() => setModal(null)} />
       )}
     </div>
   );
