@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import FilterBar from '../../components/FilterBar/FilterBar';
+import style from './CalendarioEventos.module.css';
 
 // Datos de ejemplo para eventos
 const eventsData = [
@@ -56,9 +57,9 @@ export const CalendarioEventos = () => {
     : eventsData;
 
   return (
-    <div className="calendario-container">
+    <div className={style.main}>
       {/* Título */}
-      <h1 className="calendario-title">CALENDARIO DE EVENTOS</h1>
+      <h1 className={style.title}>CALENDARIO DE EVENTOS</h1>
 
       {/* Filtros */}
       <FilterBar filters={calendarFilters} setFilterFunction={handleFilter} selectedFilter = {selectedFilter}/>

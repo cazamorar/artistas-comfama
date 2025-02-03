@@ -10,10 +10,10 @@ export const Navbar = () => {
     return (
         <div>   
         <div className={style.navbar}>
-        <div className="left">
+        <div>
             <Link to="/">
             <div>
-                <img className="navbar-logo" src={logo} alt="Logo" />
+                <img src={logo} alt="Logo" />
             </div>
             <div></div>
             </Link>

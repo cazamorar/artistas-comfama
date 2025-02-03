@@ -2,6 +2,7 @@ import React, { useState, useContext  } from 'react';
 import { InstagramLogo,  SpotifyLogo, YoutubeLogo, Equalizer, Cards } from "phosphor-react";
 import CardsContainer from '../../components/CardsContainer/CardsContainer';
 import FilterBar from '../../components/FilterBar/FilterBar';
+import style from './Musicos.module.css'
 
 // Datos de ejemplo para los músicos
 const musicians = [
@@ -187,9 +188,9 @@ export const Musicos = () => {
     : musicians;
 
   return (
-    <div className="musicos-container">
+    <div className={style.main}>
       {/* Título de la vista */}
-      <h1 className="musicos-title">MÚSICOS</h1>
+      <h1 className={style.title}>MÚSICOS</h1>
 
       {/* Filtros por género */}
       <FilterBar filters={genreFilters} setFilterFunction={setSelectedGenre} selectedFilter = {selectedGenre}/>
