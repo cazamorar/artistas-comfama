@@ -1,7 +1,6 @@
+import React from 'react'
 import { InstagramLogo,  SpotifyLogo, YoutubeLogo, Equalizer } from "phosphor-react";
 import style from "./Modal.module.css";
-
-import React from 'react'
 import Button from "../Button/Button";
 
 export const Modal = ({profile, OnCloseFuntion}) => {

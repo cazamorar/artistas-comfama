@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import style from './Home.module.css';
 import Button from '../../components/Button/Button';
-import { Footer } from '../../components/Footer/Footer';
+import { Link, useNavigate } from "react-router-dom";
 
 const sliderImageInfo = [
   {
@@ -57,22 +57,22 @@ export const Home = () => {
 
       {/* Sección de botones de navegación */}
       <section className={style.cards__container}>
-        <button className={`${style.card} ${style.main__card}`} >
+        <Link to="/calendario-eventos" className={`${style.card} ${style.main__card}`} >
           <img src="/src/assets/buttons/calendar.png" alt="Vista 1" />
           <span className={style.card__text}>Calendario de Eventos</span>
-        </button>
-        <button className={style.card}>
+        </Link>
+        <Link to="/fotografia-pintura" className={style.card}>
           <img src="/src/assets/buttons/cepillo-de-pintura.png" alt="Vista 2" />
           <span className={style.card__text}>Fotografía y Pintura</span>
-        </button>
-        <button className={style.card}>
+        </Link>
+        <Link to="/bailarines" className={style.card}>
           <img src="/src/assets/buttons/danza.png" alt="Vista 3" />
           <span className={style.card__text}>Bailarines</span>
-        </button>
-        <button className={style.card}>
+        </Link>
+        <Link to="/musicos" className={style.card}>
           <img src="/src/assets/buttons/nota-musical.png" alt="Vista 3" />
           <span className={style.card__text}>Músicos</span>
-        </button>
+        </Link>
       </section>
     </div>
   );
