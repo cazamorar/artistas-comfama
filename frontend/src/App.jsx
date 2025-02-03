@@ -5,6 +5,7 @@ import { CalendarioEventos } from "./pages/CalendarioEventos/CalendarioEventos"
 import { Musicos } from "./pages/Musicos/Musicos"
 import { Bailarines } from "./pages/Bailarines/Bailarines"
 import { FotografiaPintura } from "./pages/FotografiaPintura/FotografiaPintura"
+import { Footer } from "./components/Footer/Footer"
 
 function App() {
 
@@ -22,7 +23,7 @@ function App() {
           <Route path="/bailarines" element={<Bailarines/>}/>
           <Route path="/fotografia-pintura" element={<FotografiaPintura/>} />
       </Routes>
-
+      <Footer/>
   </Router>  
     
   </>

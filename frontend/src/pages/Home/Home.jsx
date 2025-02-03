@@ -74,8 +74,6 @@ export const Home = () => {
           <span className={style.card__text}>Músicos</span>
         </button>
       </section>
-
-      <Footer />
     </div>
   );
 };

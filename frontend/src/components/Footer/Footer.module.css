@@ -7,6 +7,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: var(--spacing-6);
 }
 
 .footer__container {
@@ -14,7 +15,7 @@
     justify-content: center;
     align-items: start;
     flex-direction: column;
-    width: 68%;
+    width: 80%;
 }
 
 .footer__social__text{
