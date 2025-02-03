@@ -112,3 +112,197 @@
   .profile-button:hover {
     background-color: #0056b3;
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* ================================
+          Estilos para el Modal
+   ================================ */
+
+/* Overlay del modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Contenedor principal del modal */
+.modal-content {
+  position: relative;
+  width: 928px;
+  height: 1428px;
+  background-color: #fff;
+  padding: 400px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  border-radius: 8px;
+}
+
+/* Botón para cerrar el modal */
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.modal-close:hover {
+  background: #0056b3;
+}
+
+/* Encabezado del modal: nombre del músico (288px × 40px) */
+.modal-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.modal-musician-name {
+  width: 288px;
+  height: 40px;
+  text-align: center;
+  font-size: 1.8rem;
+  color: #333;
+  margin: 0;
+}
+
+/* Cuerpo del modal */
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Sección de descripción e imagen */
+.modal-info {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* Descripción del músico (430px × 264px) */
+.modal-description {
+  width: 430px;
+  height: 264px;
+  overflow: auto;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* Imagen del músico (320px × 320px) */
+.modal-image {
+  width: 320px;
+  height: 320px;
+}
+
+.modal-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Redes sociales */
+.modal-social {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.modal-social img {
+  width: 30px;
+  height: 30px;
+  transition: opacity 0.3s;
+}
+
+.modal-social img:hover {
+  opacity: 0.7;
+}
+
+/* Portafolio */
+.modal-portfolio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Título del portafolio (136px × 20px) */
+.portfolio-title {
+  width: 136px;
+  height: 20px;
+  font-size: 1.2rem;
+  color: #333;
+  text-align: center;
+  margin: 0;
+}
+
+/* Contenedor de videos */
+.portfolio-videos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Video principal */
+.video-main {
+  width: 408px;
+  height: 306px;
+}
+
+/* Contenedor para videos secundarios */
+.video-secondary {
+  display: flex;
+  gap: 20px;
+}
+
+/* Los iframes ya tienen definido el ancho y alto inline en el JSX */
