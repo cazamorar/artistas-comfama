@@ -1,12 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import { FacebookLogo, InstagramLogo, TwitterLogo, SpotifyLogo, YoutubeLogo, LinkedinLogo, Equalizer } from "phosphor-react";
+import style from './Home.module.css';
+import Button from '../../components/Button/Button';
+import { Footer } from '../../components/Footer/Footer';
 
-
-const sliderImages = [
-  '/src/assets/slider/image1.jpg', // Ajusta la ruta de la imagen
-  '/src/assets/slider/image2.jpg',
-  '/src/assets/slider/image3.jpg'
-];
+const sliderImageInfo = [
+  {
+    title: 'Estéreo Picnic',
+    description: 'Acompañanos en el mejor concierto de música alternativa',
+    image: '/src/assets/slider/image1.jpg'
+  },
+  {
+    title: 'Nada es Permanente',
+    description: 'Paula Arenas se complace en anunciar su gira Nada es permanente Tour. La gira comenzará en el mes de octubre y llevará a Paula a presentarse en varias ciudades, cerrando el año con una serie de conciertos inolvidables.',
+    image: '/src/assets/slider/image2.jpg'
+  },
+  {
+    title: 'Quinteto Giovanni Parra',
+    description: 'Disfruta de la música de cámara con el Quinteto Giovanni Parra, junto a los bailarines invitados Ivan Ovalle y Gina Medina',
+    image: '/src/assets/slider/image3.jpg'
+  }
+]
 
 export const Home = () => {
 
@@ -15,143 +28,54 @@ export const Home = () => {
   // Cambia la imagen del slider cada 4 segundos
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex(prevIndex => (prevIndex + 1) % sliderImages.length);
+      setCurrentIndex(prevIndex => (prevIndex + 1) % sliderImageInfo.length);
     }, 4000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="home-container">
+    <div className={style.main__container}>
       {/* Sección del slider */}
-      <header className="home-header">
-        <div className="slider">
-          <img
-            src={sliderImages[currentIndex]}
-            alt={`Slide ${currentIndex + 1}`}
-          />
+      <header className={style.header}>
+        <div className={`${style.header__decoration} ${style.left}`}></div>
+        <div className={`${style.header__decoration} ${style.right}`}></div>
+        <div className={style.header__main__container}>
+          <div className={style.header__main}>
+            <img
+              src={sliderImageInfo[currentIndex].image}
+              alt={`Slide ${currentIndex + 1}`}
+              className={style.header__main__img}
+            />
+            <div className={style.header__main__text}>
+              <h1>{sliderImageInfo[currentIndex].title}</h1>
+              <p>{sliderImageInfo[currentIndex].description}</p>
+              <Button buttonText="Ver Mas" clickFunction={() => console.log("Click")} />
+            </div>
+          </div>
         </div>
       </header>
 
       {/* Sección de botones de navegación */}
-      <section className="home-buttons">
-        <button className="nav-button">
+      <section className={style.cards__container}>
+        <button className={`${style.card} ${style.main__card}`} >
           <img src="/src/assets/buttons/calendar.png" alt="Vista 1" />
-          <span>Calendario de Eventos</span>
+          <span className={style.card__text}>Calendario de Eventos</span>
         </button>
-        <button className="nav-button">
+        <button className={style.card}>
           <img src="/src/assets/buttons/cepillo-de-pintura.png" alt="Vista 2" />
-          <span>Fotografía y Pintura</span>
+          <span className={style.card__text}>Fotografía y Pintura</span>
         </button>
-        <button className="nav-button">
+        <button className={style.card}>
           <img src="/src/assets/buttons/danza.png" alt="Vista 3" />
-          <span>Bailarines</span>
+          <span className={style.card__text}>Bailarines</span>
         </button>
-        <button className="nav-button">
+        <button className={style.card}>
           <img src="/src/assets/buttons/nota-musical.png" alt="Vista 3" />
-          <span>Músicos</span>
+          <span className={style.card__text}>Músicos</span>
         </button>
       </section>
 
-      {/* Footer con redes sociales y la información adicional */}
-      <footer className="home-footer">
-        <div className="social-media">
-          <a
-            href="https://facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FacebookLogo size={32} />
-          </a>
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          > 
-            <InstagramLogo size={32} />
-          </a>
-          <a
-            href="https://twitter.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <TwitterLogo size={32} />
-          </a>
-          <a
-            href="https://spotify.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <SpotifyLogo size={32} />
-          </a>
-          <a
-            href="https://youtube.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <YoutubeLogo size={32} />
-          </a>
-          <a
-            href="https://linkedin.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <LinkedinLogo size={32} />
-          </a>
-          <a
-            href="https://deezer.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Equalizer size={32} />
-          </a>
-        </div>
-
-        
-        {/* Información adicional en 5 columnas */}
-        <div className="footer-extra">
-          <div className="footer-columns">
-            <div className="footer-column">
-              <p>Comfama</p>
-              <p>Conoce Comfama</p>
-              <p>Centro de Ayuda</p>
-              <p>Encuéntranos</p>
-              <p>Tarifas</p>
-              <p>Beneficios</p>
-              <p>Trabaja con Nosotros</p>
-            </div>
-            <div className="footer-column">
-              <p>Te acompañamos</p>
-              <p>Atención y servicio a la ciudadanía</p>
-              <p>Presentar una petición</p>
-              <p>Carta derechos y deberes afiliados</p>
-              <p>Nuestros compromisos</p>
-              <p>Ayudanos a mejorar</p>
-              <p>Mapa del sitio</p>
-            </div>
-            <div className="footer-column">
-              <p>Central de Llamadas</p>
-              <p>Valle de Aburrá y Oriente cercano</p>
-              <p>604 360 70 80</p>
-              <p>Para los demás municipios</p>
-              <p>01 8000 415 455</p>
-              <p>Área administrativa</p>
-              <p>604 216900</p>
-              <p>Línea de transparencia</p>
-              <p>01 8000 423517</p>
-            </div>    
-          </div>
-        </div>
-        <div>
-            {/* Sección de botones de navegación */}
-            <section className="imagen">
-                <img src="/src/assets//logo.png" alt="Vista 1" />
-                <p>Comfama es un sitio seguro</p>
-            </section>
-        </div>
-        <div className="footer-info">
-          <p>Copyright©2025. Comfama. Todos los derechos reservados. Medellín - Colombia</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };
