@@ -1,5 +1,5 @@
 import React, { useState, useContext  } from 'react';
-import '../styles/pages/Bailarines.css';
+import '../../styles/pages/Bailarines.css';
 import { InstagramLogo,  SpotifyLogo, YoutubeLogo, Equalizer } from "phosphor-react";
 
 

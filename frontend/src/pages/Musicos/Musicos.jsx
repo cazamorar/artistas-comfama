@@ -1,5 +1,5 @@
 import React, { useState, useContext  } from 'react';
-import '../styles/pages/Musicos.css';
+import '../../styles/pages/Musicos.css';
 import { InstagramLogo,  SpotifyLogo, YoutubeLogo, Equalizer } from "phosphor-react";
 
 // Datos de ejemplo para los músicos

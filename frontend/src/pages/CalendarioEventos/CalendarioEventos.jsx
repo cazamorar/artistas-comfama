@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../styles/pages/CalendarioEventos.css';
+import '../../styles/pages/CalendarioEventos.css';
 
 
 // Datos de ejemplo para eventos

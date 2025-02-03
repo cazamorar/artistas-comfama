@@ -1,0 +1,58 @@
+/* Reset CSS - Normaliza estilos en todos los navegadores */
+
+/* Box sizing border-box por defecto */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Eliminar estilos predeterminados de listas */
+ul, ol {
+  list-style: none;
+}
+
+/* Quitar estilos de enlaces y mantener herencia de color */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Tipografía base y corrección en diferentes navegadores */
+body {
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Eliminar estilos predeterminados de botones e inputs */
+button, input, textarea, select {
+  font: inherit;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+/* Evitar imágenes y medios con dimensiones desbordadas */
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Definir estilos de foco accesibles */
+:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+/* Eliminar diferencias de espacio en encabezados */
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+/* Ajustar la fuente para 1rem = 10px*/
+html {
+  font-size: 62.5%;
+}

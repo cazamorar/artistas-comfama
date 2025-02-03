@@ -1,10 +1,10 @@
-import { Navbar } from "./components/Navbar"
+import { Navbar } from "./components/Navbar/Navbar"
 import {BrowserRouter as Router, Routes, Route, Navigate} from "react-router-dom"
-import { Home } from "./pages/Home"
-import { CalendarioEventos } from "./pages/CalendarioEventos"
-import { Musicos } from "./pages/Musicos"
-import { Bailarines } from "./pages/Bailarines"
-import { FotografiaPintura } from "./pages/FotografiaPintura"
+import { Home } from "./pages/Home/Home"
+import { CalendarioEventos } from "./pages/CalendarioEventos/CalendarioEventos"
+import { Musicos } from "./pages/Musicos/Musicos"
+import { Bailarines } from "./pages/Bailarines/Bailarines"
+import { FotografiaPintura } from "./pages/FotografiaPintura/FotografiaPintura"
 
 function App() {
 

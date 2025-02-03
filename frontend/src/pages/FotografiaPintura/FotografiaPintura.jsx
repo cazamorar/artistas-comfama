@@ -1,5 +1,5 @@
 import React, { useState, useContext  } from 'react';
-import '../styles/pages/FotografiaPintura.css';
+import '../../styles/pages/FotografiaPintura.css';
 import { InstagramLogo,  SpotifyLogo, YoutubeLogo, Equalizer } from "phosphor-react";
 
 

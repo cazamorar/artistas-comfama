@@ -1,0 +1,29 @@
+:root {
+  /* Colores */
+  --primary-color: #FF297F;
+  --secondary-color: #FFC9DF;
+  --black-color: #1C170D;
+  --white-color: #FCFAF7;
+  --gray-1-color: #F2F2F2;
+  --gray-2-color: #625E56;
+  --main-text-color: var(--black-color);
+  --secondary-text-color: var(--gray-2-color);
+  --background-color: var(--white-color);
+
+
+  /* Tipografía */
+  --font-primary: 'Inter', sans-serif;
+  --font-size-small: 1.2rem;
+  --font-size-base: 1.6rem;
+  --font-size-lg: 2rem;
+  --font-size-h3: 2.4rem;
+  --font-size-h2: 2.8rem;
+  --font-size-h1: 3.6rem;
+
+  /* Espaciado */
+  --spacing-1: 0.8rem;
+  --spacing-2: 1.6rem;
+  --spacing-3: 2.4rem;
+  --spacing-4: 3.2rem;
+  --spacing-5: 4rem;
+}
