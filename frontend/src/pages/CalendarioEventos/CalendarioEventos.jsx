@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import FilterBar from '../../components/FilterBar/FilterBar';
 import style from './CalendarioEventos.module.css';
+import EventCard from '../../components/EventCard/EventCard';
 
 // Datos de ejemplo para eventos
 const eventsData = [
@@ -65,34 +66,9 @@ export const CalendarioEventos = () => {
       <FilterBar filters={calendarFilters} setFilterFunction={handleFilter} selectedFilter = {selectedFilter}/>
 
       {/* Cards de eventos */}
-      <div className="events-cards">
+      <div className={style.main__container}>
         {filteredEvents.map(event => (
-          <div key={event.id} className="event-card">
-            <div className="event-header">
-              <h2 className="event-title">{event.title}</h2>
-            </div>
-            <div className="event-body">
-              <div className="event-image">
-                <img src={event.image} alt={event.title} />
-              </div>
-              <div className="event-details">
-                <div className="event-date">
-                  <p className="date-day">{event.date.day}</p>
-                  <p className="date-month">{event.date.month}</p>
-                  <p className="date-year">{event.date.year}</p>
-                </div>
-                <div className="event-location">
-                  <p>{event.location}</p>
-                </div>
-                <div className="event-time">
-                  <p>{event.time}</p>
-                </div>
-                <div className="event-contact">
-                  <button className="contact-btn">Contactar</button>
-                </div>
-              </div>
-            </div>
-          </div>
+          <EventCard key={event.id} event={event} />
         ))}
       </div>
     </div>
